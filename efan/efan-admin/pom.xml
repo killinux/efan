@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.funshion</groupId>
-    <artifactId>meedo</artifactId>
+    <artifactId>efan</artifactId>
     <version>0.0.1</version>
   </parent>
   <artifactId>efan-admin</artifactId>

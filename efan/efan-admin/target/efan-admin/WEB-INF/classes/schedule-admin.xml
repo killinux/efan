@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="  
+        http://www.springframework.org/schema/beans       
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+        
+		<bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+			<property name="triggers">  
+				<list>  
+					<!-- 开发环境不执行这些定时器-->
+   					<ref bean="AppTimerTrigger" />
+					
+				</list>
+			</property>  
+		</bean>
+		
+	    <!-- 调度的配置开始 -->  
+	     <bean id="AppTimerTrigger"  
+	        class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+	        <property name="jobDetail">  
+	            <ref bean="appJobDetail" />  
+	        </property>  
+	        <property name="cronExpression">  
+	            <value>0 0/5 * * * ?</value>  
+	        </property>  
+	    </bean> 
+    <!-- job的配置开始 -->  
+    <bean id="appJobDetail"  
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject">  
+            <ref bean="appJob" />  
+        </property>  
+        <property name="targetMethod">  
+            <value>execute</value>  
+        </property>  
+    </bean>
+       
+    <!-- 工作的bean -->  
+    <bean id="appJob" class="com.efan.module.job.AppTimerJob" >
+        <property name="appService">  
+            <ref bean="appService" />  
+        </property>       
+    </bean>
+    
+</beans>
