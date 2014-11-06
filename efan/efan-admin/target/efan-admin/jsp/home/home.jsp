@@ -6,7 +6,7 @@
 <%@ include file="/common/taglibs.jsp"%>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Meedo-OTT应用市场管理后台</title>
+<title>efan管理后台</title>
 
 <link href="themes/default/style.css" rel="stylesheet"	type="text/css" media="screen" />
 <link href="themes/css/core.css" rel="stylesheet" type="text/css"	media="screen" />
@@ -103,9 +103,9 @@
 					<div class="accordionHeader"><h2><span>Folder</span>运营管理</h2></div>
 					<div class="accordionContent">
 						<ul class="tree">
-							<li><a href="channel/list" target="navTab" mask="true" rel="channelList" title="频道管理">频道管理</a></li>
+							<li><a href="channel/list" target="navTab" mask="true" rel="channelList" title="用户管理">用户管理</a></li>
 							<li><a href="catagory/list" target="navTab" mask="true" rel="catagoryList" title="分类管理">分类管理</a></li>
-							<li><a href="app/list" target="navTab" mask="true" rel="appList" title="应用管理">应用管理</a></li>
+							<li><a href="app/list" target="navTab" mask="true" rel="appList" title="商品管理">商品管理</a></li>
 						</ul>
 					</div>
 					<c:if test="${auth == 1}">
@@ -141,7 +141,7 @@
 						<div class="accountInfo">
 							<div class="center">
 								<p>
-									<span style="color: red">meedo - OTT Launcher 应用市场管理后台</span>
+									<span style="color: red">efan管理后台</span>
 								</p>
 							</div>
 						</div>

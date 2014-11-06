@@ -243,7 +243,7 @@ public class ChannelController extends AbstractController {
 		if(appIds==null){
 			ret = new AjaxResponse();
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-			ret.setMessage("频道管理--数据管理--添加应用--请您选择App！");
+			ret.setMessage("用户管理--数据管理--添加商品--请您选择App！");
 			//ret.setNavTabId("managerChannel");
 			ret.setRel("listAllAppForChannel");
 			ret.setForwardUrl("channel/listallapp/"+channel_id);

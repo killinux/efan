@@ -11,7 +11,7 @@
 				<input type="text" name="name" size="25" class="required" maxlength="128"/>
 			</div>
 			<div class="unit">
-				<label>频道状态:</label>
+				<label>用户状态:</label>
 				<select name="status">
 					<option value="0" selected>未激活</option>
 					<option value="1">激活</option>

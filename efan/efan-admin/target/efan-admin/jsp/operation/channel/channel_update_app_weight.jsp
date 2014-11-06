@@ -7,7 +7,7 @@
 			onsubmit="return validateCallback(this, dialogAjaxDone);">
 		<div class="pageFormContent" layoutH="50">
 			<div class="unit">
-				<label>应用名称:</label>
+				<label>商品名称:</label>
 				<input type="hidden" name="id" value="${entity.id}"/>
 				${entity.name}
 				<input type="hidden" name="name" class="required" maxlength="64" value="<c:out value="${channel_id}" />"/>

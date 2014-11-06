@@ -55,7 +55,7 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
-	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
+	<!-- 数据源配置,使用商品内的DBCP数据库连接池 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<!-- Connection Info -->
 		<property name="driverClassName" value="${jdbc.driver}" />

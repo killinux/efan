@@ -68,7 +68,7 @@ public class CatagoryService extends AbstractService {
 		try {
 			if(isExistedCatagory(catagoryInfo.getName())) {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("应用分类-添加应用分类失败【该分类已经存在】");
+				ret.setMessage("商品分类-添加商品分类失败【该分类已经存在】");
 				return ret;
 			}
 			
@@ -76,7 +76,7 @@ public class CatagoryService extends AbstractService {
 			catagoryMapper.addCatagory(catagoryInfo);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用分类-添加应用分类成功！");
+			ret.setMessage("商品分类-添加商品分类成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("catagoryList");
@@ -104,7 +104,7 @@ public class CatagoryService extends AbstractService {
 			catagoryMapper.updateCatagory(catagoryInfo);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用分类-更新应用分类成功！");
+			ret.setMessage("商品分类-更新商品分类成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("catagoryList");
@@ -129,7 +129,7 @@ public class CatagoryService extends AbstractService {
 			catagoryMapper.removeCatagoryAppRel(id);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用分类-删除应用分类成功！");
+			ret.setMessage("商品分类-删除商品分类成功！");
 			
 			ret.setNavTabId("catagoryList");
 			

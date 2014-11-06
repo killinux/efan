@@ -53,7 +53,7 @@ public final class GlobalConstant {
 		}
 	}
 	
-	/**应用状态*/
+	/**商品状态*/
 	public static final class App {
 		public static final class Status {
 			/** 待处理*/

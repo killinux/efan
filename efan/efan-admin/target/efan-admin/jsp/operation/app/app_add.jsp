@@ -184,13 +184,13 @@
 	function validateAppAttrInfo() {
 		var catagories = $(".addApp input[name=catagory]:checked");
 		if(catagories.size() < 1) {
-			alertMsg.error("请选择应用分类！");
+			alertMsg.error("请选择商品分类！");
 			return false;
 		}
 
 		var channels = $(".addApp input[name=channel]:checked");
 		if(channels.size() < 1) {
-			alertMsg.error("请选择应用频道！");
+			alertMsg.error("请选择商品用户！");
 			return false;
 		}
 
@@ -202,7 +202,7 @@
 
 		var developerName = $(".addApp #developerName").val();
 		if(developerName == null || developerName == "") {
-			alertMsg.error("请选择应用开发者！");
+			alertMsg.error("请选择商品开发者！");
 			return false;
 		}	
 
@@ -328,7 +328,7 @@
 			<form id="apkForm" action="app/upload-apk" method="post" enctype="multipart/form-data" 
 						onsubmit="return iframeCallback(this, uploadApkCallback);">
 				<div class="unit">
-					<label>上传应用：</label>
+					<label>上传商品：</label>
 					<input id="apkFile" type="file" name="apk" size="25">
 				</div>
 			</form>
@@ -340,7 +340,7 @@
 					<input type="hidden" id="apkUrl" name="apkUrl"/>
 					<input type="hidden" id="id" name="id" value="0"/>
 					<div class="unit">
-						<label>应用包名：</label>
+						<label>商品包名：</label>
 						<input type="text" id="pkgName" name="pkgName" size="25" class="required"/>
 					</div>
 					<div class="unit">
@@ -357,11 +357,11 @@
 						<input type="text" id="verCode" name="verCode" size="25" class="required"/>
 					</div>
 					<div class="unit">
-						<label>应用名：</label>
+						<label>商品名：</label>
 						<input type="text" id="displayName" name="name" size="25" class="required"/>
 					</div>
 					<div class="unit">
-						<label>应用简介：</label>
+						<label>商品简介：</label>
 						<textarea id="brief" name="brief" cols="25" rows="5" class="required" maxlength="200"/>
 					</div>
 					<div class="unit">
@@ -425,7 +425,7 @@
 				</div>
 				<div class="unit">
 					<fieldset style="width:420px;margin:4px">
-						<legend>所属频道</legend>
+						<legend>所属用户</legend>
 						<c:forEach var="item" items="${channels}" varStatus="status">
 							<input type="checkbox" id="channel_${status.index}" name="channel" channelName="${item.name}" value="${item.id}">${item.name}</input>
 						</c:forEach>
@@ -440,7 +440,7 @@
 					</fieldset>
 				</div>
 				<div class="unit">
-					<label>应用开发商：</label>
+					<label>商品开发商：</label>
 					<input type="text" class="required" id="developerName" size="40" maxlength="15"/>
 				</div>
 			</fieldset>	

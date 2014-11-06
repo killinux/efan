@@ -10,7 +10,7 @@
 <div class="pageHeader">
 	<form rel="pagerForm" onsubmit="return dialogSearch(this);"  action="channel/searchapp/${channel_id}" method="post"> 
         <div class="unit">
-            <label>应用名：</label>
+            <label>商品名：</label>
             <input type="text" name="name" value=""/>
             <label>按分类筛选：</label>
             <select name="catagory" >
@@ -41,7 +41,7 @@
         	<th width="5%">序号</th>
         	<th width="20%">选择</th>
             <th width="20%">ID</th>
-            <th width="20%">应用名称</th>
+            <th width="20%">商品名称</th>
             <th width="10%">分类</th>
         </thead>
         <tbody>

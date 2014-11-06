@@ -4,14 +4,14 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Meedo-OTT应用市场管理后台</title>
+<title>efan管理后台</title>
 
 <link href="themes/css/login.css" rel="stylesheet" type="text/css" />
 <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 
 </head>
 <body>
-	<p>Meedo-OTT应用市场管理后台</p>
+	<p>efan管理后台</p>
 	<div id="login">
 		<div id="login_content">
 			<div class="loginForm">

@@ -104,13 +104,13 @@
 	function validateAppAttrInfo() {
 		var catagories = $(".updateApp input[name=catagory]:checked");
 		if(catagories.size() < 1) {
-			alertMsg.error("请选择应用分类！");
+			alertMsg.error("请选择商品分类！");
 			return false;
 		}
 
 		var channels = $(".updateApp input[name=channel]:checked");
 		if(channels.size() < 1) {
-			alertMsg.error("请选择应用频道！");
+			alertMsg.error("请选择商品用户！");
 			return false;
 		}
 
@@ -122,7 +122,7 @@
 
 		var developerName = $(".updateApp #developerName").val();
 		if(developerName == null || developerName == "") {
-			alertMsg.error("请选择应用开发者！");
+			alertMsg.error("请选择商品开发者！");
 			return false;
 		}	
 
@@ -219,15 +219,15 @@
 					<!-- 基本信息 -->
 					<input type="hidden" id="apkUrl" name="apkUrl" value="${entity.apkUrl}"/>
  					<div class="unit">
-						<label>应用ID：</label>
+						<label>商品ID：</label>
 						<input type="text" size="25" name="id" class="required" value="<c:out value="${entity.id}"/>"/>
 					</div> 
 					<div class="unit">
-						<label>应用名称：</label>
+						<label>商品名称：</label>
 						<input id="pkgName" type="text" name="pkgName" size="25" class="required" value="<c:out value="${entity.pkgName}"/>"/>
 					</div>
 					<div class="unit">
-						<label>应用大小：</label>
+						<label>商品大小：</label>
 						<input id="pkgSize" type="text" size="25" name="pkgSize" class="required" value="<c:out value="${entity.pkgSize}"/>"/>
 						<span class="info">M</span>
 					</div>
@@ -306,7 +306,7 @@
 				</div>
 				<div class="unit">
 					<fieldset style="width:420px;margin:4px">
-						<legend>所属频道</legend>
+						<legend>所属用户</legend>
 						<c:forEach var="item" items="${channels}" >
 							<input type="checkbox" name="channel" value="${item.id}" <c:if test="${fn:contains(appChannels, item.name)}">checked</c:if>  >${item.name}</checkbox>
 						</c:forEach>
@@ -324,7 +324,7 @@
 					</fieldset>
 				</div>
 				<div class="unit">
-					<label>应用开发商：</label>
+					<label>商品开发商：</label>
 					<input type="text" class="required" id="developerName" size="40" maxlength="15" value="<c:out value="${entity.developer}"/>"/>
 				</div>
 			</fieldset>	

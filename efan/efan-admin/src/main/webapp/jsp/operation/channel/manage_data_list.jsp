@@ -10,20 +10,20 @@
 </form>
 
 <div class="pageHeader">
-频道ID：${channel_id}  -------- 频道名称: ${channel_name}
+用户ID：${channel_id}  -------- 用户名称: ${channel_name}
 </div>
 
 <div class="pageContent">
     <div class="panelBar">
         <ul class="toolBar">
-            <li><a class="add" href="channel/listallapp/${channel_id}" target="dialog" mask="true" rel="listAllAppForChannel" width="800" height="600"><span>添加应用</span></a></li>
+            <li><a class="add" href="channel/listallapp/${channel_id}" target="dialog" mask="true" rel="listAllAppForChannel" width="800" height="600"><span>添加商品</span></a></li>
         </ul>
     </div>
     <table class="table" width="100%" layoutH="110">
         <thead>
             <th width="5%" >序号</th>
-            <th width="20%" orderField="id" <c:if test="${pagerForm.orderField == 'id'}"> class="${pagerForm.orderDirection}" </c:if> >应用ID</th>
-            <th width="20%">应用名称</th>
+            <th width="20%" orderField="id" <c:if test="${pagerForm.orderField == 'id'}"> class="${pagerForm.orderDirection}" </c:if> >商品ID</th>
+            <th width="20%">商品名称</th>
             <th width="10%">分类</th>
             <th width="10%" orderField="ott_channel_app_rel.app_weight" <c:if test="${pagerForm.orderField == 'ott_channel_app_rel.app_weight'}"> class="${pagerForm.orderDirection}" </c:if> >排序权重</th>
             <th width="10%">状态</th>
@@ -40,11 +40,11 @@
                  	<c:out value="${item.weight}" />
                 </td>
                 <td>
-                	<c:if test="${item.verCode != item.lastestVer}">不</c:if>是最新的应用
+                	<c:if test="${item.verCode != item.lastestVer}">不</c:if>是最新的商品
                 </td>
                 <td>
                     <a class="btnEdit" href="channel/managerUpdateAppWeight/${channel_id}/${item.id}/${item.weight}" target="dialog" mask="true" rel="managerAppWeight" width="530" height="300" title="编辑App在“${channel_name}”的权重">编辑权重</a>
-                    <a class="btnDel" href="channel/removeAppFromChannel/${channel_id}/${item.id}" target="ajaxtodo" title="在频道中移除App">在频道中移除App</a>
+                    <a class="btnDel" href="channel/removeAppFromChannel/${channel_id}/${item.id}" target="ajaxtodo" title="在用户中移除App">在用户中移除App</a>
                 </td>
             </tr>
             </c:forEach>

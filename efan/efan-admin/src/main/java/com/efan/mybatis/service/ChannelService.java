@@ -72,7 +72,7 @@ public class ChannelService extends AbstractService {
 		try {
 			if(isExistedChannel(channelInfo.getName())) {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("频道管理-添加频道类失败【该频道已经存在】");
+				ret.setMessage("用户管理-添加用户类失败【该用户已经存在】");
 				return ret;
 			}
 			System.out.println("createUser:"+createUser);
@@ -81,7 +81,7 @@ public class ChannelService extends AbstractService {
 			channelMapper.addChannel(channelInfo);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道管理-添加频道成功！");
+			ret.setMessage("用户管理-添加用户成功！");
 			
 			ret.setCallbackType("closeCurrent");//todo haohao ??
 			ret.setNavTabId("channelList");
@@ -118,14 +118,14 @@ public class ChannelService extends AbstractService {
 			 */
 //			if(isExistedChannel(channelInfo.getName())) {
 //				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-//				ret.setMessage("频道管理-添加频道类失败【该频道已经存在】");
+//				ret.setMessage("用户管理-添加用户类失败【该用户已经存在】");
 //				return ret;
 //			}
 			channelInfo.setUpdateUser(updateUser);
 			channelMapper.updateChannelById(channelInfo);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道管理-更新频道成功！");
+			ret.setMessage("用户管理-更新用户成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("channelList");
@@ -149,7 +149,7 @@ public class ChannelService extends AbstractService {
 			}
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道管理--数据管理-批量增加App成功！");
+			ret.setMessage("用户管理--数据管理-批量增加App成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("managerChannel");
@@ -174,7 +174,7 @@ public class ChannelService extends AbstractService {
 			channelMapper.removeChannelAppRel(id);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道管理-删除频道成功！");
+			ret.setMessage("用户管理-删除用户成功！");
 			
 			//ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("channelList");
@@ -197,7 +197,7 @@ public class ChannelService extends AbstractService {
 			channelMapper.removeAppFromChannel(channel_id, app_id);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道-数据管理-删除频道中的应用成功！");
+			ret.setMessage("用户-数据管理-删除用户中的商品成功！");
 			
 			//ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("managerChannel");
@@ -219,7 +219,7 @@ public class ChannelService extends AbstractService {
 		try {
 			channelMapper.updateAppWeightByChannelIdAndAppId( channel_id,app_id,app_weight);
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("频道-数据管理-修改app在频道中的权重成功！");
+			ret.setMessage("用户-数据管理-修改app在用户中的权重成功！");
 			
 			
 

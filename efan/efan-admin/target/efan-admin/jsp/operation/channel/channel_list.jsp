@@ -12,7 +12,7 @@
 <div class="pageHeader">
      <form rel="pagerForm" onsubmit="return navTabSearch(this);" action="channel/search" method="post">
         <div class="unit">
-            <label>频道名称：</label>
+            <label>用户名称：</label>
             <input type="text" name="name" value="${searchName}"/>
             <button type="submit" name="searchBtn" id="searchId">查询</button>
         </div>
@@ -22,19 +22,19 @@
 <div class="pageContent">
     <div class="panelBar">
         <ul class="toolBar">
-            <li><a class="add" href="channel/add" target="dialog" mask="true" rel="addAuthDevice" height="300"><span>新增频道</span></a></li>
+            <li><a class="add" href="channel/add" target="dialog" mask="true" rel="addAuthDevice" height="300"><span>新增用户</span></a></li>
         </ul>
     </div>
     <table class="table" width="100%" layoutH="110">
         <thead>
             <th width="5%" orderField="id" <c:if test="${pagerForm.orderField == 'id'}"> class="${pagerForm.orderDirection}" </c:if> >id</th>
-            <th width="20%" orderField="name" <c:if test="${pagerForm.orderField == 'name'}"> class="${pagerForm.orderDirection}" </c:if> >频道名称</th>
-            <th width="20%" orderField="weight" <c:if test="${pagerForm.orderField == 'weight'}"> class="${pagerForm.orderDirection}" </c:if> >频道排序权重</th>
-            <th width="10%">频道状态</th>
+            <th width="20%" orderField="name" <c:if test="${pagerForm.orderField == 'name'}"> class="${pagerForm.orderDirection}" </c:if> >用户名称</th>
+            <th width="20%" orderField="weight" <c:if test="${pagerForm.orderField == 'weight'}"> class="${pagerForm.orderDirection}" </c:if> >用户排序权重</th>
+            <th width="10%">用户状态</th>
             <!-- <th width="10%">是否可用</th> -->
- 			<!-- <th width="10%">频道创建用户</th> -->
- 			<th width="10%">频道修改用户</th>
-            <th width="10%" orderField="update_time" <c:if test="${pagerForm.orderField == 'update_time'}"> class="${pagerForm.orderDirection}" </c:if> >频道修改时间</th>
+ 			<!-- <th width="10%">用户创建用户</th> -->
+ 			<th width="10%">用户修改用户</th>
+            <th width="10%" orderField="update_time" <c:if test="${pagerForm.orderField == 'update_time'}"> class="${pagerForm.orderDirection}" </c:if> >用户修改时间</th>
             <th width="10%">操作</th>
         </thead>
         <tbody>
@@ -69,13 +69,13 @@
                 <td><c:out value="${item.updateUserName}" /></td>
                 <td><fmt:formatDate value="${item.updateTime}" pattern='yyyy-MM-dd HH:mm:ss'/></td>
                 <td>
-                		<!-- <a href="channel/list" target="navTab" mask="true" rel="channelList" title="频道管理">频道管理</a> -->
-                    <a class="btnEdit" href="channel/update/${item.id}" target="dialog" mask="true" rel="updateChannel" width="530" height="300" title="修改频道信息">修改</a>
+                		<!-- <a href="channel/list" target="navTab" mask="true" rel="channelList" title="用户管理">用户管理</a> -->
+                    <a class="btnEdit" href="channel/update/${item.id}" target="dialog" mask="true" rel="updateChannel" width="530" height="300" title="修改用户信息">修改</a>
                     <%-- <a class="btnEdit" href="channel/manager/${item.id}" target="dialog" mask="true" rel="managerChannel" width="600" height="500" title="管理数据">管理数据</a> --%>
                      <a class="btnAssign" href="channel/manager/${item.id}" target="navTab" mask="true" rel="managerChannel" width="600" height="500" title="管理“${item.name}”数据">管理数据</a>
                      
                     <c:if test="${item.isDeleted == '0'}">
-                    <a class="btnDel" href="channel/remove/${item.id}" target="ajaxtodo" title="删除频道">删除频道</a>
+                    <a class="btnDel" href="channel/remove/${item.id}" target="ajaxtodo" title="删除用户">删除用户</a>
                     </c:if>
                 </td>
             </tr>

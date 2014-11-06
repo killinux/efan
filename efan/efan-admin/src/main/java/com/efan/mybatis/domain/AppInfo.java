@@ -36,14 +36,14 @@ public class AppInfo {
 	private String lastestVer;
 	
 	/*
-	 * 管理频道数据的时候返回给前段用的，数据库没这个值
+	 * 管理用户数据的时候返回给前段用的，数据库没这个值
 	 */
 	private String catagories;
 	
 	private String channels;
 	
 	/*
-	 * 管理频道数据的时候返回给前段用的，数据库没这个值
+	 * 管理用户数据的时候返回给前段用的，数据库没这个值
 	 */
 	private String channelId;
 	

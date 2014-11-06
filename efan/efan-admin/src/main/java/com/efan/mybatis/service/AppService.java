@@ -117,7 +117,7 @@ public class AppService extends AbstractService {
 		AppInfo appInfo = getLastestVerApp(pkgName);
 		if(Long.valueOf(appInfo.getVerCode()) >= verCode) {
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-			ret.setMessage("应用-添加应用失败【版本号低于已上传最新版本，请更换应用包】");
+			ret.setMessage("商品-添加商品失败【版本号低于已上传最新版本，请更换商品包】");
 			return ret;
 		} 
 		
@@ -151,7 +151,7 @@ public class AppService extends AbstractService {
 			for(long catagoryId : catagories) {
 				if(catagoryIsNotExisted(catagoryId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加分类已删除】");
+					ret.setMessage("商品-添加商品失败【所添加分类已删除】");
 					return ret;
 				}
 			}
@@ -159,7 +159,7 @@ public class AppService extends AbstractService {
 			for(long channelId : channels) {
 				if(channelIsNotExisted(channelId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加频道已删除】");
+					ret.setMessage("商品-添加商品失败【所添加用户已删除】");
 					return ret;
 				}
 			}
@@ -194,10 +194,10 @@ public class AppService extends AbstractService {
 				}
 				
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-				ret.setMessage("应用-升级应用成功！");
+				ret.setMessage("商品-升级商品成功！");
 			} else {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("应用-升级应用失败！【老版本不存在】");
+				ret.setMessage("商品-升级商品失败！【老版本不存在】");
 			}
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("appList");
@@ -219,7 +219,7 @@ public class AppService extends AbstractService {
 			for(long catagoryId : catagories) {
 				if(catagoryIsNotExisted(catagoryId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加分类已删除】");
+					ret.setMessage("商品-添加商品失败【所添加分类已删除】");
 					return ret;
 				}
 			}
@@ -227,7 +227,7 @@ public class AppService extends AbstractService {
 			for(long channelId : channels) {
 				if(channelIsNotExisted(channelId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加频道已删除】");
+					ret.setMessage("商品-添加商品失败【所添加用户已删除】");
 					return ret;
 				}
 			}
@@ -256,12 +256,12 @@ public class AppService extends AbstractService {
 			String apkDest = notifyCDNApkReady(appInfo.getPkgName(), appInfo.getVerCode(), appInfo.getApkUrl());
 			appInfo.setApkUrl(apkDest.replace("\\", "/"));
 			
-			//保存应用
+			//保存商品
 			appInfo.setCreateUser(createUser);
 			appInfo.setBrief(appInfo.getBrief().trim());
 			appInfo.setUpdateContent(appInfo.getUpdateContent().trim());
 			appMapper.addApp(appInfo);
-			//更新应用最新版本
+			//更新商品最新版本
 			//appMapper.updateLastestVer(appInfo.getPkgName(), Long.valueOf(appInfo.getVerCode()));
 			
 			appMapper.removeAppCatagory(appInfo.getId());
@@ -275,7 +275,7 @@ public class AppService extends AbstractService {
 			}
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用-添加应用成功！");
+			ret.setMessage("商品-添加商品成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("appList");
@@ -398,7 +398,7 @@ public class AppService extends AbstractService {
 			for(long catagoryId : catagories) {
 				if(catagoryIsNotExisted(catagoryId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加分类已删除】");
+					ret.setMessage("商品-添加商品失败【所添加分类已删除】");
 					return ret;
 				}
 			}
@@ -406,7 +406,7 @@ public class AppService extends AbstractService {
 			for(long channelId : channels) {
 				if(channelIsNotExisted(channelId)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("应用-添加应用失败【所添加频道已删除】");
+					ret.setMessage("商品-添加商品失败【所添加用户已删除】");
 					return ret;
 				}
 			}
@@ -432,7 +432,7 @@ public class AppService extends AbstractService {
 			}
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用-更新应用成功！");
+			ret.setMessage("商品-更新商品成功！");
 			
 			ret.setCallbackType("closeCurrent");
 			ret.setNavTabId("appList");
@@ -501,11 +501,11 @@ public class AppService extends AbstractService {
 				appMapper.updateAppPublishState(appInfo,updateUser);//下架比当前版本小的app，modify by hao
 				System.out.println("publishAppById---"+appInfo.getVerCode());
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-				ret.setMessage("应用-发布应用成功！");
+				ret.setMessage("商品-发布商品成功！");
 				ret.setNavTabId("appList");
 			}else{
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("应用-发布应用失败，存在已经发布的新版本！");
+				ret.setMessage("商品-发布商品失败，存在已经发布的新版本！");
 				
 				ret.setNavTabId("appList");
 			}
@@ -527,7 +527,7 @@ public class AppService extends AbstractService {
 			appMapper.unpublishAppById(id, updateUser);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用-下架应用成功！");
+			ret.setMessage("商品-下架商品成功！");
 			
 			ret.setNavTabId("appList");
 			
@@ -563,7 +563,7 @@ public class AppService extends AbstractService {
 			appMapper.removeAppById(id, updateUser);
 			
 			ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-			ret.setMessage("应用-删除应用成功！");
+			ret.setMessage("商品-删除商品成功！");
 			ret.setNavTabId("appList");
 			
 			transactionManager.commit(status);

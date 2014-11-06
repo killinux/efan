@@ -111,7 +111,7 @@ public class AppController extends AbstractController {
 				String fileName = uploadFile.getOriginalFilename();
 				if(!ApkTool.checkApk(fileName)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("添加应用-上传应用失败！【请上传APK文件】");
+					ret.setMessage("添加商品-上传商品失败！【请上传APK文件】");
 					return;
 				}
 			}
@@ -119,10 +119,10 @@ public class AppController extends AbstractController {
 			String apkUrl = saveApkFile(uploadFile);
 			if(StringUtils.isBlank(apkUrl)) {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("添加应用-上传应用失败！");
+				ret.setMessage("添加商品-上传商品失败！");
 			} else {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-				ret.setMessage("添加应用-上传应用成功!");
+				ret.setMessage("添加商品-上传商品成功!");
 				
 				ApkInfo apkInfo = ApkTool.getApkInfo(apkUrl);
 				apkInfo.setApkUrl(ApkTool.getApkUrlPath() + "/" + apkUrl);
@@ -174,7 +174,7 @@ public class AppController extends AbstractController {
 				String fileName = uploadFile.getOriginalFilename();
 				if(!ApkTool.checkImg(fileName)) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("添加应用-上传应用失败！【请上传正确的格式图片】");
+					ret.setMessage("添加商品-上传商品失败！【请上传正确的格式图片】");
 					return;
 				}
 			}
@@ -185,7 +185,7 @@ public class AppController extends AbstractController {
 			
 			if(StringUtils.isBlank(imgFileName)) {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("添加应用-上传海报失败！");
+				ret.setMessage("添加商品-上传海报失败！");
 			} else {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
 				ret.setMessage("添加用用-上传海报成功!");
@@ -210,7 +210,7 @@ public class AppController extends AbstractController {
 			String imgUrl = saveImageFile(uploadFile, "icon");
 			if(StringUtils.isBlank(imgUrl)) {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-				ret.setMessage("添加应用-上传图标失败！");
+				ret.setMessage("添加商品-上传图标失败！");
 			} else {
 				ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
 				ret.setMessage("添加用用-上传图标成功!");
@@ -240,7 +240,7 @@ public class AppController extends AbstractController {
 				
 				if(files.size() < 3 || files.size() > 5) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("添加应用-上传截图失败！【最少上传3张，最多上传5张！】");
+					ret.setMessage("添加商品-上传截图失败！【最少上传3张，最多上传5张！】");
 					return;
 				}
 				
@@ -248,7 +248,7 @@ public class AppController extends AbstractController {
 					String imgFileName = files.get(i).getOriginalFilename();
 					if(!ApkTool.checkImg(imgFileName)) {
 						ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-						ret.setMessage("添加应用-上传截图失败！【请上传正确的格式图片】");
+						ret.setMessage("添加商品-上传截图失败！【请上传正确的格式图片】");
 						return;
 					}
 				}
@@ -269,11 +269,11 @@ public class AppController extends AbstractController {
 				
 				if(snapshotsUrls.length() > 0) {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.SUCCESS);
-					ret.setMessage("添加应用-上传截图成功！");
+					ret.setMessage("添加商品-上传截图成功！");
 					ret.setData(snapshotsUrls.toString());
 				} else {
 					ret.setStatusCode(GlobalConstant.AjaxResponseStatusCode.FAIL);
-					ret.setMessage("添加应用-上传截图失败！");
+					ret.setMessage("添加商品-上传截图失败！");
 				}
 			} else {
 				
@@ -327,7 +327,7 @@ public class AppController extends AbstractController {
 	}
 	
 	/**
-	 * 发布应用
+	 * 发布商品
 	 * @param id
 	 * @param session
 	 * @param response
@@ -345,7 +345,7 @@ public class AppController extends AbstractController {
 	}
 	
 	/**
-	 * 下架应用
+	 * 下架商品
 	 * @param id
 	 * @param session
 	 * @param response
@@ -363,7 +363,7 @@ public class AppController extends AbstractController {
 	}
 	
 	/**
-	 * 获取更新应用页面
+	 * 获取更新商品页面
 	 * @param id
 	 * @param map
 	 * @return
@@ -406,7 +406,7 @@ public class AppController extends AbstractController {
 	}
 	
 	/**
-	 * 更新应用
+	 * 更新商品
 	 * @param appInfo
 	 * @param catagories
 	 * @param channels
