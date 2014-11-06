@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Props xmlns="http://funshion.com/maven/plugin/configreplace/schemas" >
+	<!-- Meedo Admin 的定时排程设置 -->
+	<Prop name="schedule.admin"><![CDATA[
+		<bean name="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+			<property name="triggers">  
+				<list>  
+					<!-- 开发环境不执行这些定时器-->
+   					<ref bean="AppTimerTrigger" />
+					
+				</list>
+			</property>  
+		</bean>
+		
+	    <!-- 调度的配置开始 -->  
+	     <bean id="AppTimerTrigger"  
+	        class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+	        <property name="jobDetail">  
+	            <ref bean="appJobDetail" />  
+	        </property>  
+	        <property name="cronExpression">  
+	            <value>0 0/5 * * * ?</value>  
+	        </property>  
+	    </bean> 		
+	]]></Prop>
+
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- 当前运行环境 -->
+	<Prop name="meedo.channels.url">http://172.16.12.97:8080/meedo-service/meedo/v1/api/getChannels</Prop>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- log4j 相关属性 -->
+	<!-- meedo-admin 的 log4j 属性 -->
+	<Prop name="log4j.dir.admin">/data/meedo/log/admin</Prop>
+	<Prop name="log4j.logger.admin"><![CDATA[
+		<!-- 接口调用日志 -->
+		<logger name="meedo_admin" additivity="false">
+			<level value="DEBUG" />
+			<appender-ref ref="meedo_admin" />
+			<appender-ref ref="console" />
+		</logger>
+		
+		<logger name="com.funshion" additivity="false">
+			<level value="DEBUG" />
+			<appender-ref ref="meedo_admin" />
+			<appender-ref ref="console" />
+		</logger>		
+	
+		<!-- Root Logger -->
+		<root>
+			<priority value="INFO" />
+			<appender-ref ref="meedo_admin" />
+			<appender-ref ref="console" />
+		</root>
+	]]></Prop>
+	
+	<!-- ottauth-service 的 log4j 属性 -->
+	<Prop name="log4j.dir.service">/data/meedo/log/service</Prop>
+	<Prop name="log4j.logger.service"><![CDATA[
+		<!-- 接口调用日志 -->
+		<logger name="meedo_service" additivity="false">
+			<level value="DEBUG" />
+			<appender-ref ref="meedo_service" />s
+			<appender-ref ref="console" />
+		</logger>
+	
+		<!-- Root Logger -->
+		<root>
+			<priority value="INFO" />
+			<appender-ref ref="meedo_service" />
+			<appender-ref ref="console" />
+		</root>
+	]]></Prop>
+	
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- JDBC 相关属性  -->
+	<Prop name="jdbc.url"><![CDATA[
+		jdbc:mysql://182.254.155.153/ott_launcher_market?useUnicode=true&characterEncoding=utf-8
+	]]></Prop>
+	<Prop name="jdbc.username">root</Prop>
+	<Prop name="jdbc.password">haoning</Prop>
+	<Prop name="dbcp.maxIdle">5</Prop>
+	<Prop name="dbcp.maxActive">40</Prop>
+	
+	<!-- 图片路径 -->
+	<Prop name="img.file.path">/uploads/img</Prop>
+  	<Prop name="img.url.path">/meedo-img</Prop>
+  	<Prop name="img.cdn.path">/meedo-img</Prop>
+
+	<!-- apk路径 -->  
+	<Prop name="apk.file.path">/uploads/apk</Prop>
+  	<Prop name="apk.url.path">/meedo-apk</Prop>
+  	<Prop name="apk.cdn.path">/meedo-apk</Prop>
+  
+	<!-- 图片、apk 访问host -->
+	<Prop name="meedo.img.dns">http://localhost:8081</Prop>
+	<Prop name="meedo.apk.dns">http://localhost:8081</Prop>  
+  
+</Props>
