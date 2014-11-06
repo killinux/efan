@@ -29,7 +29,7 @@
         <thead>
             <th width="5%" orderField="id" <c:if test="${pagerForm.orderField == 'id'}"> class="${pagerForm.orderDirection}" </c:if> >id</th>
             <th width="20%" orderField="name" <c:if test="${pagerForm.orderField == 'name'}"> class="${pagerForm.orderDirection}" </c:if> >用户名称</th>
-            <th width="20%" orderField="weight" <c:if test="${pagerForm.orderField == 'weight'}"> class="${pagerForm.orderDirection}" </c:if> >用户排序权重</th>
+            <th width="20%" orderField="weight" <c:if test="${pagerForm.orderField == 'weight'}"> class="${pagerForm.orderDirection}" </c:if> >用户拥有数量</th>
             <th width="10%">用户状态</th>
             <!-- <th width="10%">是否可用</th> -->
  			<!-- <th width="10%">用户创建用户</th> -->
