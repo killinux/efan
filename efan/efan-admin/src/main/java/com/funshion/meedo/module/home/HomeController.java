@@ -23,7 +23,7 @@ import com.funshion.meedo.util.MD5Util;
 
 /**
  * 首页
- * @author weiyl
+ * @author haoning
  *
  */
 @Controller

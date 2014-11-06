@@ -21,7 +21,7 @@ import com.funshion.meedo.util.AjaxResponseUtil.AjaxResponse;
 
 /**
  * 用户权限控制
- * @author weiyl
+ * @author haoning
  *
  */
 @Controller
