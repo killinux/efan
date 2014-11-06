@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="com.funshion.meedo.mybatis.persistence.UserMapper"> 
-    <resultMap type="com.funshion.meedo.mybatis.domain.UserInfo" id="UserInfo">  
+<mapper namespace="com.efan.mybatis.persistence.UserMapper"> 
+    <resultMap type="com.efan.mybatis.domain.UserInfo" id="UserInfo">  
         <id column="id" property="id" />  
         <result column="display_name" property="displayName" />  
         <result column="login_name" property="loginName" />  
